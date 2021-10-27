@@ -43,8 +43,8 @@ const textCollection = [
 const ref_img = document.querySelector('.images');
 const ref_thumbs = document.querySelector('.thumbs');
 let active_img = 1;
-const prev = document.querySelector('prev');
-const next = document.querySelector('next');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
 
 
 for (let i = 0; i < imageCollection.length; i++) {
@@ -71,8 +71,18 @@ document.getElementsByClassName('image-container')[active_img].classList.add('ac
 document.getElementsByClassName('thumb')[active_img].classList.add('active');
 
 prev.addEventListener('click', function(){
-    
+    if (active_img === 0) {
+        active_img = 4;
+    } else {
+        active_img--;
+    }
+
+    document.getElementsByClassName('image-container')[active_img].classList.remove('active');
+    document.getElementsByClassName('thumb')[active_img].classList.remove('active');
+
+    imageCollection[i]
 })
+
 
 
 
